@@ -46,6 +46,19 @@ Flags are made using Wikipedia images
         object-fit: cover;
         border-radius: 5px;
     }
+
+    th {
+        font-family: monospace
+    }
+
+    a {
+      border-width: 5px;
+      border-style: solid;
+      border-radius: 5px;
+      background-color: rgb(0, 128, 255);
+      color: rgb(0, 64, 128);
+      margin-top: 5px;
+    }
 </style>
 
 <!-- This grid_container class is used by CSS styling and the id is used by JavaScript connection -->
@@ -60,10 +73,7 @@ Flags are made using Wikipedia images
     // 2. Define a JavaScript object for our http source and our data rows for the Living in the World grid
     var http_source = "https://upload.wikimedia.org/wikipedia/commons/";
     var living_in_the_world = [
-        {"flag": "0/01/Flag_of_California.svg", "greeting": "Hey", "description": "California - forever"},
-        {"flag": "b/b9/Flag_of_Oregon.svg", "greeting": "Hi", "description": "Oregon - 9 years"},
-        {"flag": "b/be/Flag_of_England.svg", "greeting": "Alright mate", "description": "England - 2 years"},
-        {"flag": "e/ef/Flag_of_Hawaii.svg", "greeting": "Aloha", "description": "Hawaii - 2 years"},
+        {"flag": "0/01/Flag_of_California.svg", "greeting": "Hey", "description": "California - forever (yeah this is the only place I've lived)"},
     ];
 
     // 3a. Consider how to update style count for size of container
@@ -99,27 +109,30 @@ Flags are made using Wikipedia images
 
 ### Journey through Life
 
-Here is what I did at those places
+I was born in Los Angeles but moved to San Diego with my mom and two brothers when I was <strong>4</strong>. I skipped 3rd grade when I was 8 and also gained a love for programming. I moved a few more times around the same area and now live here!
 
-- 🏫 Lots of Elementary Schools in Tucson, LA, Honolulu, and Glendale (CA)
-- 🏫 Middle and High School in Glendale (CA), Hoover High graduated '77
-- 🎓 Glendale CA Community College, UCLA Extension, LA Wilshire Computer Tech School '77 to '79
-- ⛪ England, London Missionary for Church of Jesus Christ of Latter-day Saints '79 to '81
-- 💼 Culver City, Glendale CA founder at Ashton-Tate, original PC's dBase 2 and 3 '82 to '87
-- 🎓 Eugene Oregon Undergraduate CompSci Degree at University of Oregon (Go Ducks!) '89 to '91
-- 💼 Eugene Oregon, founder and owner @ Microniche `88, Point Control CAD CAM developer '91 to '96
-- 🏢 San Diego CA Qualcomm, Satellite Comm and 1st Mobile OS (BREW) '96 to '19
-- 👨‍🏫 San Diego CA Teacher of Computer Science @ Del Norte High School San Diego '19 to present
+### Hobbies
 
-### Culture, Family, and Fun
+I have a few hobbies:
 
-Everything for me, as for many others, revolves around family and faith.
+ - talking to my friends
+ - making digital music
+ - playing my drums
+ - coding
+ - roller coasters
 
-- My mother told me that I was Danish, English. and Irish, here is my researched [family tree]({{site.baseurl}}/images/about/familytree.png)
-- My family is pretty big as I have been married twice, my 1st wife passed away.  We have had 5 kids, 4 adopted by me, 1 biological.  Plus, there are three grandkids.  My name to my grandkids is Abuilito.
-- The gallery of pics has some of my family, fun, culture and faith memories.
+### My games
 
-<comment>
+My passion for game development has led me to make games (I know, real shocker). Here are some links to games and platform accounts i have made:
+
+ - <a href="https://scratch.mit.edu/users/weststefany/">My Scratch page</a>
+ - <a href="https://west-coast-games.itch.io/">My Itch.io page</a>
+ - <a href="https://westcoastgames.net/">My website</a>
+ - <a href="https://github.com/THEGAMER221148">My GitHub page</a>
+ - <a href="https://rcbonline.net/">Roller Coaster Builder 2</a>
+
+
+<!-- <comment>
 Gallery of Pics, scroll to the right for more ...
 </comment>
 <div class="image-gallery">
@@ -135,4 +148,190 @@ Gallery of Pics, scroll to the right for more ...
   <img src="{{site.baseurl}}/images/about/claire.jpg" alt="Image 10">
   <img src="{{site.baseurl}}/images/about/grandkids.jpg" alt="Image 11">
   <img src="{{site.baseurl}}/images/about/farm.jpg" alt="Image 12">
-</div>
+</div> -->
+
+<html lang="en">
+    <p>📊 Scoring Guide:</p>
+<ul>
+  <li>1 = .55 - Self-management (Taking ownership)</li>
+  <li>2 = .75 - Incremental progression (Step-by-step growth)</li>
+  <li>3 = .85 - Self-organization (Time &amp; priority management)</li>
+  <li>4 = .90 - Iterative techniques (Continuous refinement)</li>
+  <li>5 = +.01 per quality delivery - Continuous delivery (Consistent contribution)</li>
+  <li>Mastered-Y = .93 - Excellence in all areas</li>
+</ul>
+
+<hr />
+
+<h4 id="-evaluation-matrix">📊 Evaluation Matrix</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Skill</th>
+      <th>Mastered (Y/N)</th>
+      <th>Self Rank (1-5)</th>
+      <th>Peer Rank (1-5)</th>
+      <th>Teacher Rank (1-5)</th>
+      <th>Average</th>
+      <th>Notes/Evidence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>🎯 Core Behaviors</strong></td>
+      <td>Y</td>
+      <td>5</td>
+      <td>5</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Attendance</td>
+      <td>[]</td>
+      <td>5</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Work Habits</td>
+      <td>[ ]</td>
+      <td>4.5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Behavior</td>
+      <td>[]</td>
+      <td>5</td>
+      <td>4.5</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Timeliness</td>
+      <td>[]</td>
+      <td>5</td>
+      <td> </td>
+      <td>0</td>
+      <td>0.0</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>💻 Technical Skills</strong></td>
+      <td>[]</td>
+      <td>5</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Tech/Cyber Sense</td>
+      <td>[]</td>
+      <td>5</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Tech/Cyber Talk</td>
+      <td>[]</td>
+      <td>4.5</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>I've still got some terminology to learn</td>
+    </tr>
+    <tr>
+      <td>Tech Growth</td>
+      <td>[]</td>
+      <td>5</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>🤝 Collaboration</strong></td>
+      <td>[]</td>
+      <td>4.5</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>I'm very used to idependent work, so I have to practice collaboration skills a little more</td>
+    </tr>
+    <tr>
+      <td>Advocacy</td>
+      <td>[]</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Communication &amp; Collab</td>
+      <td>[]</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>🎨 Professional Skills</strong></td>
+      <td>[]</td>
+      <td>4.5</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Integrity</td>
+      <td>[]</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Organization</td>
+      <td>[]</td>
+      <td>4.5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>📈 TOTALS</strong></td>
+      <td> </td>
+      <td><strong>72.5</strong></td>
+      <td><strong>0</strong></td>
+      <td><strong>0</strong></td>
+      <td><strong>0.0</strong></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>🎯 AVERAGE SCORE</strong></td>
+      <td> </td>
+      <td><strong>0.0</strong></td>
+      <td><strong>0.0</strong></td>
+      <td><strong>0.0</strong></td>
+      <td><strong>0.0</strong></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+</html>
