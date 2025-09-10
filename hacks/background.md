@@ -2,8 +2,8 @@
 layout: opencs
 title: Background with Object
 description: Use JavaScript to have an in motion background.
-sprite: /student/images/platformer/sprites/flying-ufo.png
-background: /student/images/platformer/backgrounds/alien_planet1.jpg
+sprite: /student/images/platformer/sprites/yat.png
+background: /student/images/platformer/backgrounds/eye bleed.jpg
 permalink: /background
 ---
 
@@ -71,7 +71,7 @@ permalink: /background
         this.frame = 0;
       }
       update() {
-        this.y = this.baseY + Math.sin(this.frame * 0.05) * 20;
+        this.y = this.baseY + Math.sin(this.frame * 0.05) * 100;
         this.frame++;
       }
     }
