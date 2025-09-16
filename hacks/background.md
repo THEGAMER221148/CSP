@@ -10,6 +10,7 @@ permalink: /background
 <canvas id="world"></canvas>
 
 <script>
+  //Get stuff from HTML
   const canvas = document.getElementById("world");
   const ctx = canvas.getContext('2d');
   const backgroundImg = new Image();
@@ -26,11 +27,12 @@ permalink: /background
     imagesLoaded++;
     startGameWorld();
   };
-
+  //Start function
   function startGameWorld() {
     if (imagesLoaded < 2) return;
-
+  //Define class GameObject (kind of weird that you're doing that inside a function but who am I to judge)
     class GameObject {
+      //constructor to get properties in Egypt
       constructor(image, width, height, x = 0, y = 0, speedRatio = 0) {
         this.image = image;
         this.width = width;
@@ -59,7 +61,7 @@ permalink: /background
         ctx.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
       }
     }
-
+    //player class
     class Player extends GameObject {
       constructor(image, gameWorld) {
         const width = image.naturalWidth / 2;
@@ -75,10 +77,11 @@ permalink: /background
         this.frame++;
       }
     }
-
+    // epic gameworld class
     class GameWorld {
       static gameSpeed = 5;
       constructor(backgroundImg, spriteImg) {
+        // parameters
         this.canvas = document.getElementById("world");
         this.ctx = this.canvas.getContext('2d');
         this.width = window.innerWidth;
@@ -96,9 +99,11 @@ permalink: /background
          new Player(spriteImg, this)
         ];
       }
+      //loop where the loop loops
       gameLoop() {
         this.ctx.clearRect(0, 0, this.width, this.height);
         for (const obj of this.objects) {
+          //update first, then show it all
           obj.update();
           obj.draw(this.ctx);
         }
@@ -108,7 +113,7 @@ permalink: /background
         this.gameLoop();
       }
     }
-
+    //make the new world and start it which executes everything
     const world = new GameWorld(backgroundImg, spriteImg);
     world.start();
   }
