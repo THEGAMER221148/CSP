@@ -9,8 +9,19 @@ permalink: /retrospective-1
             background: linear-gradient(to bottom right, rgb(48,176,255), rgb(181,243,255)) no-repeat fixed;
             background-size: cover;           /* instead of 100% 100% */
             background-position: center;
-            overflow-y: hidden;               /* kills the tiny scrollbar */
         }
+        #screenFade {
+            position: fixed;
+            background: linear-gradient(to bottom right, rgb(48,176,255), rgb(181,243,255)) no-repeat fixed;
+            background-size: cover;           /* instead of 100% 100% */
+            background-position: center;
+            overflow-y: hidden;
+            z-index: 100;     
+            width: 100%;
+            height: 100%;
+            visibility: hidden;
+        }
+        
         h1 {
             font-size: 6vw;
             line-height: 6vw;
@@ -37,6 +48,38 @@ permalink: /retrospective-1
             font-weight: 800;
             margin: 40px;
         }
+        footer {
+            display: flex;
+            gap: 40px;
+            padding: 20px;
+            background: rgba(34, 34, 34, 0.5);
+            color: white;
+            position: fixed;
+            bottom: 0%;
+            width: 100%;
+        }
+
+        .footerButton {
+            background-color: rgba(34, 34, 34, 0.5);
+            border-style: solid;
+            border-radius: 10px;
+            border-width: 5px;
+            font-size: 24px;
+            border-color: rgb(255, 255, 255);
+            color: white;
+            font-weight: 900;
+            transition: all 0.5s ease;
+        }
+
+        .footerButton:hover {
+            border-color: black;
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+        }
+
+        .section {
+            position: absolute;
+        }
 
     </style>
     <head>
@@ -45,8 +88,65 @@ permalink: /retrospective-1
         <title>Retrospective</title>
     </head>
     <body>
-        <h1>AP CSP T1: Retrospective</h1>
-        <h2>This is my CSP retrospective for the first trimester of the course.</h2>
-        <p>Press the "Next" or "Previous" arrows to navigate</p>
-    </body>
+        <div id="screenFade"></div>
+        <div class="section" id="0">
+            <h1>AP CSP T1: Retrospective</h1>
+            <h2>This is my CSP retrospective for the first trimester of the course.</h2>
+            <p>Press the "Next" or "Previous" arrows to navigate</p>
+        </div>
+
+        <div class="section" id="1" style="visibility: hidden;">
+            <h1>How I've Changed</h1>
+            <h2>Comparing myself now to the beginning of the year</h2>
+            <p>Almost three months ago, I came into this class for the first time. I had taken CSSE last year, and had some computer science experience, but I had no experience the AP CSP course. <br>
+            Before starting this course, I wasn't great at leading. I <i>could</i> be the leader of a group project, but would sometimes get lost or just "go with the flow." However, this class has taught me something valuable - how to take control and work as a team. Now, after going through nearly the entire first trimester, I have developed critical teamworking skills that will undoubtably benifit me in the future. I've also improved my awareness and communication skills, getting better at being "on top of things."</p>
+        </div>
+
+        <div class="section" id="2" style="visibility: hidden;">
+            <h1>Sprints & Key Ideas</h1>
+            <h2>Remembering Things from Three Sprints</h2>
+            <p>Almost three months ago, I came into this class for the first time. I had taken CSSE last year, and had some computer science experience, but I had no experience the AP CSP course. <br>
+            Before starting this course, I wasn't great at leading. I <i>could</i> be the leader of a group project, but would sometimes get lost or just "go with the flow." However, this class has taught me something valuable - how to take control and work as a team. Now, after going through nearly the entire first trimester, I have developed critical teamworking skills that will undoubtably benifit me in the future. I've also improved my awareness and communication skills, getting better at being "on top of things."</p>
+        </div>
+
+        <footer>
+            <button class="footerButton" onclick="move(false);">Back</button><button class="footerButton" onclick="move(true);">Next</button>
+        </footer>
+   </body>
+    <script>
+        let currentPage = 0;
+        const fader = document.getElementById("screenFade");
+
+        function move(forward){
+            fader.style.opacity = 0;
+            fader.style.visibility = "visible";
+
+            function startFade(){
+                fader.style.opacity = Number(fader.style.opacity) + 0.016;
+                setTimeout(() => {
+                    if (Number(fader.style.opacity) < 1) {
+                        startFade();
+                    } else {
+                        document.getElementById(String(currentPage)).style.visibility = "hidden";
+                        currentPage += forward? 1 : -1;
+                        document.getElementById(String(currentPage)).style.visibility = "visible";
+
+                        function lowTaperFadeOut(){
+                            fader.style.opacity = Number(fader.style.opacity) - 0.016;
+                            setTimeout(() => {
+                                if (Number(fader.style.opacity) > 0) {
+                                    lowTaperFadeOut();
+                                } else {
+                                    fader.style.opacity = 0;
+                                    fader.style.visibility = "hidden";
+                                }
+                            }, 16);
+                        }
+                        lowTaperFadeOut();
+                    }
+                }, 16);
+            }
+            startFade();
+        }
+    </script>
 </html>
