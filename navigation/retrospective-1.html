@@ -48,6 +48,14 @@ permalink: /retrospective-1
             font-weight: 800;
             margin: 40px;
         }
+        li {
+            font-size: 36px;
+            line-height: 40px;
+            font-family: Tahoma;
+            color: rgb(255, 255, 255);
+            font-weight: 800;
+            margin: 40px;
+        }
         footer {
             display: flex;
             gap: 40px;
@@ -134,6 +142,66 @@ permalink: /retrospective-1
             <p>While there are many aspects of computer science that I would find interesting, the topics I look forward to learning are <strong>databases, encryption,</strong> and <strong>live communication</strong>. These topics interest me, mainly because I see them used in the real world and can think of <i>so</i> many applications in which they would be useful.</p>
         </div>
 
+        <div class="section" id="6" style="visibility: hidden;">
+            <h1>GitHub Analytics</h1>
+            <h2>Oh Hey, it's the Numbers Part!</h2>
+            <p>This wouldn't be a complete retrospective without a look at my GitHub analytics. If you (yes, you reading this right now) happen to be me, then you can just click <a href="https://pages.opencodingsociety.com/dashboard">HERE</a> to look at the analytics. Otherwise, I'm just gonna list them out for you here:</p>
+            <ul>
+                <li>85 commits</li>
+                <li>3 issues</li>
+                <li>2 pull requests</li>
+                <li>+74696 / -2290 lines changed</li>
+            </ul>
+            <p><i>*This does not count commits that I have co-authored using LiveShare.</i></p>
+        </div>
+
+        <div class="section" id="7" style="visibility: hidden;">
+            <h1>CollegeBoard MCQ</h1>
+            <h2>How I took my MCQ and what I learned</h2>
+            <p>My approach for taking this multiple choice practice exam was to just take it like a real exam to get an idea of how well I know the required material for the AP CSP exam.</p>
+            <p>My score for the exam was 63/66, which equates to a 95.45%. Considering my passion for computer science, I actually expected myself to get a relatively high score, and the final outcome really shows it!</p>
+            <p>Despite my good score, I did still get some stuff wrong, so let's go over it:</p>
+            <p>BUT FIRST - What was the exam even about? Well, it mostly covered:</p>
+            <ul>
+                <li>Basic algorithm design</li>
+                <li>Pseudocode</li>
+                <li>Internet communications</li>
+                <li>Copyright law (there were a surprising amount of copyright law questions for a computer science test)</li>
+                <li>Algorithm Debugging</li>
+                <li>Data Encryption</li>
+            </ul>
+            <p>...And 1-2 questions about algorithmic efficiency.</p>
+            <h2>What Did I Do Wrong?</h2>
+            <p>I missed <strong>three questions</strong> on the exam. Let's go through each one and explain what I did wrong and what the right answer is:</p>
+            <ul>
+                <li>
+                    <strong>Question #37</strong>
+                    <img src="{{site.baseurl}}/images/CBMCQQ37.png" width="90%">
+                    <p>This was a logic error on my part. I did not know that the algorithm to take the average of an aray still works when taking the average after every addition to the sum, so I assumed that Program I would not work. However, it actually does, albeit less efficiently than Program II.</p>
+                </li>
+
+                <li>
+                    <strong>Question #42</strong>
+                    <img src="{{site.baseurl}}/images/CBMCQQ42.png" width="90%">
+                    <p>This was another logical error I made. I somewhat rushed this question without properly doing the math to figure out the factor of extra possibilities that increasing the bits from 32 to 128 has. As it turns out, that factor is 2^96, not 2^4.</p>
+                </li>
+
+                <li>
+                    <strong>Question #47</strong>
+                    <img src="{{site.baseurl}}/images/CBMCQQ42.png" width="90%">
+                    <p>The error I made here was that I did not understand public key cryptography. I assumed that, since the recipient's public key encrypts the message, that it would be the same key used to decrypt the message, but instead, it's actually decrypted with the recipient's private key, which makes sense considering the fact that decrypting needs to be private.</p>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="section" id="8" style="visibility: hidden;">
+            <h1>Extra CS-Related Things</h1>
+            <h2>Some Cool Things I'd Like to Share</h2>
+            <p>This has been a good trimester for me! There's a few things I want to say before the end of the retrospective. First, in addition to my work for AP CSP, I also did some CS-elated things outside of school, such as make a graphing calculator and progress on two of my games, <a href="https://westcoastgames.net/pixler/">Pixler</a> and <a href="thegamer221148.github.io/backrooms">Get Chased</a>. I've also been taking a college course about data structures and Python, which is really interesting to me! Computer science is the field I want to persue, and this class so far had been a leap in the right direction for my future!</p>
+            <h1>See you next trimester!</h1>
+        </div>
+
         <footer>
             <button class="footerButton" onclick="move(false);">Back</button><button class="footerButton" onclick="move(true);">Next</button>
         </footer>
@@ -148,6 +216,9 @@ permalink: /retrospective-1
             3: "linear-gradient(to bottom right, rgb(200,100,20), rgb(255,150,100))",
             4: "linear-gradient(to bottom right, rgb(50,200,50), rgb(200,255,200))",
             5: "linear-gradient(to bottom right, rgb(50,50,50), rgb(200,200,200))",
+            6: "linear-gradient(to bottom right, rgb(48,176,255), rgb(181,243,255))",
+            7: "linear-gradient(to bottom right, rgb(75,0,100), rgb(150,75,150))",
+            8: "linear-gradient(to bottom right, rgb(48,176,255), rgb(181,243,255))",
         }
 
         function move(forward){
@@ -162,6 +233,7 @@ permalink: /retrospective-1
                     } else {
                         document.getElementById(String(currentPage)).style.visibility = "hidden";
                         currentPage += forward? 1 : -1;
+                        currentPage = Math.abs(currentPage%Object.keys(pageColors).length);
                         document.getElementById(String(currentPage)).style.visibility = "visible";
                         document.body.style.backgroundImage = pageColors[currentPage];
 
