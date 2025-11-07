@@ -81,6 +81,10 @@ permalink: /retrospective-1
             position: absolute;
         }
 
+        strong {
+            color: rgb(255, 100, 100);
+        }
+
     </style>
     <head>
         <meta charset="UTF-8">
@@ -105,8 +109,24 @@ permalink: /retrospective-1
         <div class="section" id="2" style="visibility: hidden;">
             <h1>Sprints & Key Ideas</h1>
             <h2>Remembering Things from Three Sprints</h2>
-            <p>Almost three months ago, I came into this class for the first time. I had taken CSSE last year, and had some computer science experience, but I had no experience the AP CSP course. <br>
-            Before starting this course, I wasn't great at leading. I <i>could</i> be the leader of a group project, but would sometimes get lost or just "go with the flow." However, this class has taught me something valuable - how to take control and work as a team. Now, after going through nearly the entire first trimester, I have developed critical teamworking skills that will undoubtably benifit me in the future. I've also improved my awareness and communication skills, getting better at being "on top of things."</p>
+            <p><i>(I recognize that there's a lot of text here, so I've highlighted key words to make reading easier)</i></p>
+            <p>Throughout the year, we completed three sprints. <br><br>The first one focused on tool installation and a basic introduction of how CSP is taught. Since I took CSSE last year, I alreasy had some experience going into the tools installation and did not have to start from scratch. I already has WSL, Ubuntu, VSCode, and Python installed on my computer, and I had a basic understanding of the linux commands in the terminal. What I mainly learned from that first sprint was more about the Linux terminal, since that was something I needed a little more practice with at the time. <br> 
+            <br>The second sprint was where things really picked up. <strong>It was mostly about Javascript and Python</strong>, and although I was already familiar with these programming languages, the topics we covered weren't all things I was experienced in. For instance, algorithmic efficiency was a relatively new topic, as I hadn't known about it for long before I had to build my lesson on it for the class. One of the student-led homeworks involving an API was also challenging as I had never done things like that before. However, most of the material covered was pretty basic stuff that I already had a good understanding of. <br>
+            <br>The third and final sprint of the trimester was my favorite one. In sprint 3, we mainly focused on putting our coding experience we gained in sprint 2 to use in the form of a space-themed questified learning experience called Digital Famine. It was here that we created interactive lessons on various computer science and web concepts that all came together to form a fun quest. Having created the lesson about databases, I definitely gained some experience with database security and encryption. We also incoorperated microblogging into our lessons in the form of a feedback discussion board, which was undoubtably a focus of the sprint.</p>
+        </div>
+
+        <div class="section" id="3" style="visibility: hidden;">
+            <h1>My N@TM Experience</h1>
+            <h2>How Night at the Museum went this trimester!</h2>
+            <p>During this trimester's Night at the Museum event, I presented my level of the class's quest-like learing experience <a href="https://pages.opencodingsociety.com/digital-famine/"><i>Digital Famine</i></a> along with my team. Our presentation went smoothly, and thanks to the microblogging feature, we got some nice comments telling us that we had useful information! <br>
+            <br> Another nice thing about N@TM is that I got an opportunity to look at what the other classes created, and safe to say it did not dissapoint! CSSE's <a href="https://pages.opencodingsociety.com/west-coast"><i>West Coast</i></a> project was definitely fun to play learn about.</p>
+        </div>
+
+        <div class="section" id="4" style="visibility: hidden;">
+            <h1>My N@TM Experience</h1>
+            <h2>How Night at the Museum went this trimester!</h2>
+            <p>During this trimester's Night at the Museum event, I presented my level of the class's quest-like learing experience <a href="https://pages.opencodingsociety.com/digital-famine/"><i>Digital Famine</i></a> along with my team. Our presentation went smoothly, and thanks to the microblogging feature, we got some nice comments telling us that we had useful information! <br>
+            <br> Another nice thing about N@TM is that I got an opportunity to look at what the other classes created, and safe to say it did not dissapoint! CSSE's <a href="https://pages.opencodingsociety.com/west-coast"><i>West Coast</i></a> project was definitely fun to play learn about.</p>
         </div>
 
         <footer>
@@ -116,6 +136,12 @@ permalink: /retrospective-1
     <script>
         let currentPage = 0;
         const fader = document.getElementById("screenFade");
+        let pageColors = {
+            0: "linear-gradient(to bottom right, rgb(48,176,255), rgb(181,243,255))",
+            1: "linear-gradient(to bottom right, rgb(48,176,255), rgb(181,243,255))",
+            2: "linear-gradient(to bottom right, rgb(75,0,100), rgb(150,75,150))",
+            3: "linear-gradient(to bottom right, rgb(200,100,20), rgb(255,150,100))",
+        }
 
         function move(forward){
             fader.style.opacity = 0;
@@ -130,6 +156,7 @@ permalink: /retrospective-1
                         document.getElementById(String(currentPage)).style.visibility = "hidden";
                         currentPage += forward? 1 : -1;
                         document.getElementById(String(currentPage)).style.visibility = "visible";
+                        document.body.style.backgroundImage = pageColors[currentPage];
 
                         function lowTaperFadeOut(){
                             fader.style.opacity = Number(fader.style.opacity) - 0.016;
@@ -140,11 +167,11 @@ permalink: /retrospective-1
                                     fader.style.opacity = 0;
                                     fader.style.visibility = "hidden";
                                 }
-                            }, 16);
+                            }, 8);
                         }
                         lowTaperFadeOut();
                     }
-                }, 16);
+                }, 8);
             }
             startFade();
         }
